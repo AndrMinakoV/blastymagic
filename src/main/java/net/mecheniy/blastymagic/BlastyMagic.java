@@ -1,6 +1,7 @@
 package net.mecheniy.blastymagic;
 
 import com.mojang.logging.LogUtils;
+import net.mecheniy.blastymagic.blocks.BlocksInit;
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
@@ -26,17 +27,18 @@ import org.slf4j.Logger;
 @Mod(BlastyMagic.MODID)
 public class BlastyMagic
 {
+
     public static final String MODID = "blastymagic";
     private static final Logger LOGGER = LogUtils.getLogger();
     public BlastyMagic()
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+        BlocksInit.BLOCKS.register(modEventBus);
         modEventBus.addListener(this::commonSetup);
         ItemInit.ITEMS.register(modEventBus);
         MinecraftForge.EVENT_BUS.register(this);
 
     }
-
     private void commonSetup(final FMLCommonSetupEvent event)
     {
 
