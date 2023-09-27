@@ -47,6 +47,7 @@ public class BlocksInit {
     public static final RegistryObject<Block> unobtanium_ore = BLOCKS.register("unobtanium_ore",
             () -> new Block(Block.Properties.of(Material.METAL).strength(4f, 1200f).requiresCorrectToolForDrops().lightLevel((state) -> 15)));
 
+
 public static class ExplosiveBlock extends Block {
     public ExplosiveBlock(Block.Properties properties) {
         super(properties);
