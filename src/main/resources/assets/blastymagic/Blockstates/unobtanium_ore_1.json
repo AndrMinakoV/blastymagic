@@ -1,0 +1,20 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "minecraft:block/sand",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "blastymagic:block/unobtanium_ore",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "blastymagic:block/unobtanium_ore",
+      "y": 90
+    },
+    "facing=west": {
+      "model": "blastymagic:block/unobtanium_ore",
+      "y": 90
+    }
+  }
+}
