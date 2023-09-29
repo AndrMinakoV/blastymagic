@@ -38,7 +38,7 @@ public class ItemInit {
             return new ItemStack(unobtanium_ingot.get());
         }
     }
-    public static RegistryObject<Item> unobtanium_goal = ITEMS.register("unoptanium_goal", //must be static
+    public static RegistryObject<Item> unobtanium_goal = ITEMS.register("unobtanium_goal", //must be static
             () -> new FuelItem(new Item.Properties().tab(ItemInit.ModeCreativeTab.instance), 3200));
     public static final RegistryObject<Item> poisoned_apple = ITEMS.register("poisoned_apple",
             ()-> new Item(new Item.Properties().tab(ModeCreativeTab.instance)

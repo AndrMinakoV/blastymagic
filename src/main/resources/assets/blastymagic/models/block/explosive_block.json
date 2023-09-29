@@ -1,6 +1,6 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "blastymagic:blocks/exploive_block"
+    "all": "blastymagic:blocks/explosive_block"
   }
 }

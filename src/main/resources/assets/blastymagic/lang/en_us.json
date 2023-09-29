@@ -2,5 +2,7 @@
   "itemGroup.blastymagic": "Blasty Magic111",
   "item.blastymagic.unobtanium_ingot": "Слиток унобтания",
   "block.blastymagic.unobtanium_ore": "Унобтаниевая руда",
-  "block.blastymagic.explosion_block": "Обогащённый динамит"
+  "block.blastymagic.explosion_block": "Обогащённый динамит",
+  "item.blastymagic.poisoned_apple": "Отравленное яблоко",
+  "item.blastymagic.unobtanium_goal":"Унобитаниевый уголь"
 }
