@@ -9,13 +9,12 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.food.FoodProperties;
-import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.*;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import net.mecheniy.blastymagic.util.ModItemTier;
 
 import javax.annotation.Nullable;
 import java.util.logging.Level;
@@ -48,6 +47,20 @@ public class ItemInit {
     public static final RegistryObject<Item> basic_teleportator = ITEMS.register("basic_teleportator",
             ()->new TeleportStaff(new Item.Properties().tab(ModeCreativeTab.instance).durability(200)));
 
+    public static final RegistryObject<Item> PENIS_SWORD = ITEMS.register("penis_sword",
+            () -> new SwordItem(ModItemTier.PINK, 3, -2.4F, new Item.Properties().tab(ModeCreativeTab.instance)));
+
+    public static final RegistryObject<Item> PINK_PICKAXE = ITEMS.register("pink_pickaxe",
+            () -> new PickaxeItem(ModItemTier.PINK,1, -1.0F, new Item.Properties().tab(ModeCreativeTab.instance)));
+
+    public static final RegistryObject<Item> PINK_AXE = ITEMS.register("pink_axe",
+            () -> new AxeItem(ModItemTier.PINK, 6, -3.4F, new Item.Properties().tab(ModeCreativeTab.instance)));
+
+    public static final RegistryObject<Item> PINK_SHOVEL = ITEMS.register("pink_shovel",
+            () -> new ShovelItem(ModItemTier.PINK, 1, -1.0F, new Item.Properties().tab(ModeCreativeTab.instance)));
+
+    public static final RegistryObject<Item> PINK_HOE = ITEMS.register("pink_hoe",
+            () -> new HoeItem(ModItemTier.PINK, 0, -1.0F, new Item.Properties().tab(ModeCreativeTab.instance)));
 
 }
 
