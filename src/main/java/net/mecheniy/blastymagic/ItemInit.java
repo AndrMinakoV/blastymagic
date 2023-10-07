@@ -25,6 +25,9 @@ public class ItemInit {
 
     public static final RegistryObject<Item> unobtanium_ingot = ITEMS.register("unobtanium_ingot",
             () -> new Item(new Item.Properties().tab(ModeCreativeTab.instance)));
+
+    public static final RegistryObject<Item> activated_unobtanium_ingot = ITEMS.register("activated_unobtanium_ingot",
+            () -> new Item(new Item.Properties().tab(ModeCreativeTab.instance)));
     public static class ModeCreativeTab extends CreativeModeTab {
         public static final ModeCreativeTab instance = new ModeCreativeTab(CreativeModeTab.TABS.length, "Blasty Magic");
 
