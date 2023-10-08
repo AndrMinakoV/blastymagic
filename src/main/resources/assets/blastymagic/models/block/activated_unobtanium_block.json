@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "blastymagic:blocks/activated_unobtanium_block"
+  }
+}

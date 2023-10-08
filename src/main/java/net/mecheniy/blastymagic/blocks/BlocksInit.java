@@ -52,6 +52,9 @@ public class BlocksInit {
     public static final RegistryObject<Block> unobtanium_ore = BLOCKS.register("unobtanium_ore",
             () -> new Block(Block.Properties.of(Material.METAL).strength(4f, 1200f).requiresCorrectToolForDrops().lightLevel((state) -> 15)));
 
+    public static  final RegistryObject<Block> activated_unobtanium_block = BLOCKS.register("activated_unobtanium_block",
+            () -> new Block(BlockBehaviour.Properties.of(Material.METAL).strength(4f).requiresCorrectToolForDrops().lightLevel((state)->15)));
+
 
 public static class ExplosiveBlock extends Block {
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;

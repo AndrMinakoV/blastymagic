@@ -21,14 +21,6 @@ import javax.annotation.Nullable;
 import java.util.logging.Level;
 
 public class ItemInit {
-    public static final DeferredRegister<Item> ITEMS =
-            DeferredRegister.create(ForgeRegistries.ITEMS, BlastyMagic.MODID);
-
-    public static final RegistryObject<Item> unobtanium_ingot = ITEMS.register("unobtanium_ingot",
-            () -> new Item(new Item.Properties().tab(ModeCreativeTab.instance)));
-
-    public static final RegistryObject<Item> activated_unobtanium_ingot = ITEMS.register("activated_unobtanium_ingot",
-            () -> new Item(new Item.Properties().tab(ModeCreativeTab.instance)));
     public static class ModeCreativeTab extends CreativeModeTab {
         public static final ModeCreativeTab instance = new ModeCreativeTab(CreativeModeTab.TABS.length, "Blasty Magic");
 
@@ -41,6 +33,15 @@ public class ItemInit {
             return new ItemStack(unobtanium_ingot.get());
         }
     }
+    public static final DeferredRegister<Item> ITEMS =
+            DeferredRegister.create(ForgeRegistries.ITEMS, BlastyMagic.MODID);
+
+    public static final RegistryObject<Item> unobtanium_ingot = ITEMS.register("unobtanium_ingot",
+            () -> new Item(new Item.Properties().tab(ModeCreativeTab.instance)));
+
+    public static final RegistryObject<Item> activated_unobtanium_ingot = ITEMS.register("activated_unobtanium_ingot",
+            () -> new Item(new Item.Properties().tab(ModeCreativeTab.instance)));
+
     public static RegistryObject<Item> unobtanium_goal = ITEMS.register("unobtanium_goal", //must be static
             () -> new FuelItem(new Item.Properties().tab(ItemInit.ModeCreativeTab.instance), 3200));
     public static final RegistryObject<Item> poisoned_apple = ITEMS.register("poisoned_apple",
