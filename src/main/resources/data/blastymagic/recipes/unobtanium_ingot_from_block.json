@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "blastymagic:unobtanium_block"
+    }
+  ],
+  "result": {
+    "item": "blastymagic:unobtanium_ingot",
+    "count": 9
+  }
+}

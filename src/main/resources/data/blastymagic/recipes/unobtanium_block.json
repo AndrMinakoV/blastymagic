@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "III",
+    "III",
+    "III"
+  ],
+  "key": {
+    "I": {
+      "item": "blastymagic:unobtanium_ingot"
+    }
+  },
+  "result": {
+    "item": "blastymagic:unobtanium_block",
+    "count": 1
+  }
+}
