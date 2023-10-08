@@ -1,24 +1,25 @@
 package net.mecheniy.blastymagic.items;
 
-import net.mecheniy.blastymagic.util.KeyboardHelper;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.ClipContext;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.Mth;
 import net.minecraft.world.phys.Vec3;
-import net.minecraft.world.level.Level;
-import javax.annotation.Nullable;
-import java.util.List;
+import net.minecraft.world.level.ClipContext;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.network.chat.*;
+import net.mecheniy.blastymagic.util.KeyboardHelper;
+
+import javax.annotation.Nullable;
+import java.util.List;
 
 public class TeleportStaff extends Item {
     public TeleportStaff(Item.Properties properties) {
@@ -27,26 +28,15 @@ public class TeleportStaff extends Item {
 
     @Override
     public InteractionResultHolder<ItemStack> use(Level world, Player player, InteractionHand hand) {
-        // get where the player is looking and move them there
-        BlockHitResult ray = rayTrace(world, player, ClipContext.Fluid.NONE);
-        BlockPos lookPos = ray.getBlockPos().relative(ray.getDirection());
-        player.setPos(lookPos.getX(), lookPos.getY(), lookPos.getZ());
+        if (!world.isClientSide()) {
+            // Get where the player is looking and move them there
+            BlockHitResult ray = rayTrace(world, player, ClipContext.Fluid.NONE);
+            BlockPos lookPos = ray.getBlockPos().relative(ray.getDirection());
+            player.teleportTo(lookPos.getX() + 0.5, lookPos.getY(), lookPos.getZ() + 0.5);
 
-        // only allow the player to use it every 3 seconds
-        player.getCooldowns().addCooldown(this, 60);
-
-        // allow the teleport to cancel fall damage
-        player.fallDistance = 0F;
-
-        // play a teleport sound. the last two args are volume and pitch
-        world.playSound(player, player.getX(), player.getY(), player.getZ(), SoundEvents.ENDERMAN_TELEPORT, SoundSource.PLAYERS, 1.0F, 1.0F);
-
-        // reduce durability
-        ItemStack stack = player.getItemInHand(hand);
-        stack.setDamageValue(stack.getDamageValue() + 1);
-
-        // break if durability gets to 0
-        if (stack.getDamageValue() >= stack.getMaxDamage()) stack.setCount(0);
+            // Play a teleport sound
+            world.playSound(player, player.getX(), player.getY(), player.getZ(), SoundEvents.ENDERMAN_TELEPORT, SoundSource.PLAYERS, 1.0F, 1.0F);
+        }
 
         return super.use(world, player, hand);
     }
@@ -54,7 +44,7 @@ public class TeleportStaff extends Item {
     @Override
     public void appendHoverText(ItemStack stack, @Nullable Level worldIn, List<Component> tooltip, TooltipFlag flagIn) {
         if (KeyboardHelper.isHoldingShift()){
-            tooltip.add(Component.literal("teleports you where you're looking"));
+            tooltip.add(Component.literal("Teleports you where you're looking"));
         }
 
         super.appendHoverText(stack, worldIn, tooltip, flagIn);

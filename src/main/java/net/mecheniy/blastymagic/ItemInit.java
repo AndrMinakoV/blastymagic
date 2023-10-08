@@ -1,5 +1,6 @@
 package net.mecheniy.blastymagic;
 
+import net.mecheniy.blastymagic.items.CustomSwordItem;
 import net.mecheniy.blastymagic.items.FuelItem;
 import net.mecheniy.blastymagic.items.TeleportStaff;
 import net.minecraft.world.InteractionHand;
@@ -51,7 +52,7 @@ public class ItemInit {
             ()->new TeleportStaff(new Item.Properties().tab(ModeCreativeTab.instance).durability(200)));
 
     public static final RegistryObject<Item> PENIS_SWORD = ITEMS.register("penis_sword",
-            () -> new SwordItem(ModItemTier.PINK, 3, -2.4F, new Item.Properties().tab(ModeCreativeTab.instance)));
+            () -> new CustomSwordItem(ModItemTier.PINK, 3, -2.4F, new Item.Properties().tab(ModeCreativeTab.instance)));
 
     public static final RegistryObject<Item> PINK_PICKAXE = ITEMS.register("pink_pickaxe",
             () -> new PickaxeItem(ModItemTier.PINK,1, -1.0F, new Item.Properties().tab(ModeCreativeTab.instance)));
