@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "blastymagic:unobtanium_ore",
+    "blastymagic:activated_unobtanium_block",
+    "blastymagic:unobtanium_block"
+  ]
+}
