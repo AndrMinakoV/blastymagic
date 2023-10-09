@@ -1,6 +1,7 @@
 package net.mecheniy.blastymagic;
 
 import net.mecheniy.blastymagic.items.CustomSwordItem;
+import net.mecheniy.blastymagic.items.EightBallItem;
 import net.mecheniy.blastymagic.items.FuelItem;
 import net.mecheniy.blastymagic.items.TeleportStaff;
 import net.minecraft.world.InteractionHand;
@@ -33,6 +34,8 @@ public class ItemInit {
             return new ItemStack(unobtanium_ingot.get());
         }
     }
+
+
     public static final DeferredRegister<Item> ITEMS =
             DeferredRegister.create(ForgeRegistries.ITEMS, BlastyMagic.MODID);
 
@@ -42,6 +45,10 @@ public class ItemInit {
     public static final RegistryObject<Item> activated_unobtanium_ingot = ITEMS.register("activated_unobtanium_ingot",
             () -> new Item(new Item.Properties().tab(ModeCreativeTab.instance)));
 
+
+
+
+    //Инициализация предметов
     public static RegistryObject<Item> unobtanium_goal = ITEMS.register("unobtanium_goal", //must be static
             () -> new FuelItem(new Item.Properties().tab(ItemInit.ModeCreativeTab.instance), 3200));
     public static final RegistryObject<Item> poisoned_apple = ITEMS.register("poisoned_apple",
@@ -67,6 +74,9 @@ public class ItemInit {
     public static final RegistryObject<Item> PINK_HOE = ITEMS.register("pink_hoe",
             () -> new HoeItem(ModItemTier.PINK, 0, -1.0F, new Item.Properties().tab(ModeCreativeTab.instance)));
 
+
+    public static final RegistryObject<Item> EIGHT_BALL = ITEMS.register("eight_ball",
+            () -> new EightBallItem(new Item.Properties().tab(ModeCreativeTab.instance)));
 }
 
 

@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "blastymagic:blocks/jumpy_block"
+  }
+}

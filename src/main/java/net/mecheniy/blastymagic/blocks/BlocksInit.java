@@ -1,6 +1,8 @@
 package net.mecheniy.blastymagic.blocks;
 import net.mecheniy.blastymagic.BlastyMagic;
 import net.mecheniy.blastymagic.ItemInit;
+import net.mecheniy.blastymagic.blocks.custom.ActivatedBlock;
+import net.mecheniy.blastymagic.blocks.custom.JumpyBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.InteractionHand;
@@ -57,6 +59,9 @@ public class BlocksInit {
 
     public static  final RegistryObject<Block> unobtanium_block = BLOCKS.register("unobtanium_block",
             () -> new Block(BlockBehaviour.Properties.of(Material.METAL).strength(3f).requiresCorrectToolForDrops().lightLevel((state)->15)));
+
+    public static  final RegistryObject<Block> jumpy_block = BLOCKS.register("jumpy_block",
+            () -> new ActivatedBlock(BlockBehaviour.Properties.of(Material.GRASS).strength(3f).requiresCorrectToolForDrops().lightLevel((state)->15)));
 
 public static class ExplosiveBlock extends Block {
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;

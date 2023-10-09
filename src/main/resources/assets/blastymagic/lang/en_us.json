@@ -1,24 +1,24 @@
 {
   "itemGroup.blastymagic": "Blasty Magic111",
-  //Другое
   "item.blastymagic.unobtanium_ingot": "Слиток унобтания",
   "item.blastymagic.poisoned_apple": "Отравленное яблоко",
   "item.blastymagic.unobtanium_goal": "Унобитаниевый уголь",
   "item.blastymagic.activated_unobtanium_ingot": "Активированный унобтаниевый слиток",
 
-  //Инструменты
+
   "item.blastymagic.penis_sword":" Пенисовый меч",
   "item.blastymagic.pink_pickaxe": "Унобтаниевая кирка",
   "item.blastymagic.pink_axe":"Унобтаниевый топор",
   "item.blastymagic.pink_hoe": "Унобтаниевая мотыга",
   "item.blastymagic.pink_whovel": "Унобтаниевая лопата",
   "item.blastymagic.basic_teleportator": "Базовый телепортатор",
+  "item.blastymagic.eight_ball": "Шар удачи",
 
 
-  //Блоки
+
   "block.blastymagic.explosion_block": "Обогащённый динамит",
   "block.blastymagic.unobtanium_ore": "Унобтаниевая руда",
   "block.blastymagic.unobtanium_block": "Унобтаниевый блок",
-  "block.blastymagic.activated_unobtanium_block": "Блок активированого унобтания"
-
+  "block.blastymagic.activated_unobtanium_block": "Блок активированого унобтания",
+  "block.blastymagic.jumpy_block": "Блок для прыжков"
 }
