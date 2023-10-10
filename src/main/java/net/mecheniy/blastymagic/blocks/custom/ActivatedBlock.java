@@ -28,11 +28,12 @@ public class ActivatedBlock extends Block {
     public ActivatedBlock(Properties properties){
         super(properties);
     }
+
+    
     @Override
     public InteractionResult use(BlockState blockState, Level level, BlockPos blockPos, Player player, InteractionHand interactionHand, BlockHitResult blockHitResult) {
         if (!level.isClientSide() && interactionHand == InteractionHand.MAIN_HAND && player.getItemInHand(interactionHand).getItem() == Items.DIAMOND ) {
             Block block =  ForgeRegistries.BLOCKS.getValue(new ResourceLocation("blastymagic:activated_unobtanium_block"));
-            player.sendSystemMessage(Component.literal("Its diamond"));
             level.destroyBlock(blockPos, true);
             if (block != null){
                 level.setBlock(blockPos, block.defaultBlockState(), 1);

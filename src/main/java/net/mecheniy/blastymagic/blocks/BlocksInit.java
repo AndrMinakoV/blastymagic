@@ -2,9 +2,11 @@ package net.mecheniy.blastymagic.blocks;
 import net.mecheniy.blastymagic.BlastyMagic;
 import net.mecheniy.blastymagic.ItemInit;
 import net.mecheniy.blastymagic.blocks.custom.ActivatedBlock;
-import net.mecheniy.blastymagic.blocks.custom.JumpyBlock;
+
+
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
@@ -18,11 +20,14 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.HorizontalDirectionalBlock;
+
+
+
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
-import net.minecraft.world.level.levelgen.structure.templatesystem.BlockAgeProcessor;
+
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -63,6 +68,9 @@ public class BlocksInit {
     public static  final RegistryObject<Block> jumpy_block = BLOCKS.register("jumpy_block",
             () -> new ActivatedBlock(BlockBehaviour.Properties.of(Material.GRASS).strength(3f).requiresCorrectToolForDrops().lightLevel((state)->15)));
 
+
+
+
 public static class ExplosiveBlock extends Block {
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
 
@@ -71,14 +79,17 @@ public static class ExplosiveBlock extends Block {
         super(properties);
         this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH));
     }
+
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
         builder.add(FACING);
     }
+
     @Override
     public BlockState getStateForPlacement(BlockPlaceContext context) {
         return this.defaultBlockState().setValue(FACING, context.getHorizontalDirection().getOpposite());
     }
+
     @Override
     public InteractionResult use(BlockState state, Level world, BlockPos pos, Player player, InteractionHand hand,
                                  BlockHitResult hit) {
@@ -89,7 +100,7 @@ public static class ExplosiveBlock extends Block {
             held.shrink(1);
             return InteractionResult.CONSUME;
         }
-        return super.use(state, world,pos, player,hand,hit);
+        return super.use(state, world, pos, player, hand, hit);
     }
 
     @Override
@@ -99,13 +110,10 @@ public static class ExplosiveBlock extends Block {
         super.wasExploded(world, pos, explosion);
     }
 
-}
+
     public static final RegistryObject<Block> explosive_block = BLOCKS.register("explosive_block",
-            ()-> new ExplosiveBlock(BlockBehaviour.Properties.copy(Blocks.DIRT)));
+            () -> new ExplosiveBlock(BlockBehaviour.Properties.copy(Blocks.DIRT)));
 
 
-
-
-
-
+}
 }
