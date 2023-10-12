@@ -4,6 +4,7 @@ import net.mecheniy.blastymagic.ItemInit;
 import net.mecheniy.blastymagic.blocks.custom.ActivatedBlock;
 
 
+import net.mecheniy.blastymagic.blocks.custom.CrusherBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 
@@ -68,10 +69,13 @@ public class BlocksInit {
     public static  final RegistryObject<Block> jumpy_block = BLOCKS.register("jumpy_block",
             () -> new ActivatedBlock(BlockBehaviour.Properties.of(Material.GRASS).strength(3f).requiresCorrectToolForDrops().lightLevel((state)->15)));
 
+    public static final RegistryObject<CrusherBlock> CRUSHER = BLOCKS.register("crusher",
+            () -> new CrusherBlock(BlockBehaviour.Properties.of(Material.STONE).strength(5F, 20F).requiresCorrectToolForDrops()));
 
 
 
-public static class ExplosiveBlock extends Block {
+
+    public static class ExplosiveBlock extends Block {
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
 
     public ExplosiveBlock(Block.Properties properties) {

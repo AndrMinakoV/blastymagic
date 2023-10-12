@@ -48,7 +48,6 @@ public class ItemInit {
 
 
 
-    //Инициализация предметов
     public static RegistryObject<Item> unobtanium_goal = ITEMS.register("unobtanium_goal", //must be static
             () -> new FuelItem(new Item.Properties().tab(ItemInit.ModeCreativeTab.instance), 3200));
     public static final RegistryObject<Item> poisoned_apple = ITEMS.register("poisoned_apple",

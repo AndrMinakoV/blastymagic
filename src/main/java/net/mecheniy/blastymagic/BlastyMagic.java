@@ -1,6 +1,7 @@
 package net.mecheniy.blastymagic;
 
 import com.mojang.logging.LogUtils;
+import net.mecheniy.blastymagic.blocks.BlockEntityInit;
 import net.mecheniy.blastymagic.blocks.BlocksInit;
 
 
@@ -25,6 +26,8 @@ public class BlastyMagic
         modEventBus.addListener(this::commonSetup);
         ItemInit.ITEMS.register(modEventBus);
         MinecraftForge.EVENT_BUS.register(this);
+
+        BlockEntityInit.BLOCK_ENTITIES.register(modEventBus);
 
 
     }
